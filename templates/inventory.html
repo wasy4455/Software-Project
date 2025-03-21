@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="inventory.css">
+    <script defer src="inventory.js"></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Inventory Management</h2>
+        <ul>
+            <li onclick="showSection('add-item')">➕ Add Item</li>
+            <li onclick="showSection('remove-item')">🗑 Remove Item</li>
+            <li onclick="showSection('update-item')">✏️ Update Item</li>
+            <li onclick="showSection('search-item')">🔍 Search Item</li>
+        </ul>
+        <button onclick="goHome()">🏠 Back to Home</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1 style="margin-left: 20px;">Inventory Management</h1>
+
+
+        <!-- Add Item -->
+        <div id="add-item" class="section">
+            <h2>➕ Add Item</h2>
+            <input type="text" id="add-name" placeholder="Item Name">
+            <input type="number" id="add-quantity" placeholder="Quantity">
+            <input type="text" id="add-price" placeholder="Price">
+            <button onclick="addItem()">Add</button>
+        </div>
+
+        <!-- Remove Item -->
+        <div id="remove-item" class="section hidden">
+            <h2>🗑 Remove Item</h2>
+            <input type="text" id="remove-name" placeholder="Item Name">
+            <button onclick="removeItem()">Remove</button>
+        </div>
+
+        <!-- Update Item -->
+        <div id="update-item" class="section hidden">
+            <h2>✏️ Update Item</h2>
+            <input type="text" id="update-name" placeholder="Item Name">
+            <input type="number" id="update-quantity" placeholder="New Quantity">
+            <input type="text" id="update-price" placeholder="New Price">
+            <button onclick="updateItem()">Update</button>
+        </div>
+
+        <!-- Search Item -->
+        <div id="search-item" class="section hidden">
+            <h2>🔍 Search Item</h2>
+            <input type="text" id="search-name" placeholder="Search Item">
+            <button onclick="searchItem()">Search</button>
+            <p id="search-result"></p>
+        </div>
+    </div>
+
+</body>
+</html>

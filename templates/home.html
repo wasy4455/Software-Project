@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <script defer src="{{ url_for('static', filename='js/home.js') }}"></script>
+</head>
+<body>
+
+    <!-- Sidebar (Initially Hidden) -->
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li class="sidebar-header">Admin Panel</li>
+            <li onclick="goToInventory()">📦 Inventory Management</li>
+            <li>📊 Report Generation</li>
+            <li>⚙️ Settings</li>
+        </ul>
+        <div class="logout" onclick="logout()">🚪 Logout</div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div class="main-content">
+        <header>
+            <button id="menu-btn" onclick="toggleSidebar()">☰</button>
+            <h2>Admin Dashboard</h2>
+            <div class="profile-section" onclick="toggleProfileMenu()">
+                <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Admin">
+                <div id="profile-menu" class="profile-menu">
+                    <button onclick="manageProfile()">👤 Manage Profile</button>
+                    <button onclick="logout()">🚪 Logout</button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="dashboard-content">
+            <h3>Welcome, Admin!</h3>
+            <p>Select an option from the sidebar.</p>
+        </div>
+    </div>
+
+</body>
+</html>
